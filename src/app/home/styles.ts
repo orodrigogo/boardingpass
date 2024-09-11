@@ -1,17 +1,37 @@
 import { StyleSheet } from "react-native"
 
+import { colors } from "@/styles/colors"
+import { fontFamily } from "@/styles/fontFamily"
+
 export const s = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#D7D7D7",
-    padding: 16,
+    backgroundColor: colors.black,
   },
   header: {
     width: "100%",
-    marginVertical: 62,
     flex: 1,
-    padding: 32,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  title: {
+    color: colors.white,
+    fontSize: 24,
+    fontFamily: fontFamily.extrabold,
+  },
+  subtitle: {
+    color: colors.gray[300],
+    fontSize: 14,
+    fontFamily: fontFamily.medium,
+  },
+  ticket: {
+    backgroundColor: colors.white,
+    borderRadius: 22,
+    overflow: "hidden",
+  },
+  content: {
+    padding: 20,
   },
   flight: {
     width: "100%",
@@ -23,31 +43,20 @@ export const s = StyleSheet.create({
   duration: {
     alignItems: "center",
   },
-  title: {
-    flex: 1,
-    color: "#000000",
-    fontSize: 18,
-    fontWeight: "500",
-    textAlign: "center",
-  },
-  ticket: {
-    width: "100%",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 22,
-    overflow: "hidden",
-  },
-  content: {
-    padding: 20,
+  hours: {
+    color: colors.gray[800],
+    fontSize: 14,
+    fontFamily: fontFamily.regular,
   },
   label: {
-    color: "#AFAFB4",
+    color: colors.gray[400],
     fontSize: 12,
-    fontWeight: "500",
     textTransform: "uppercase",
+    fontFamily: fontFamily.regular,
   },
   name: {
     fontSize: 22,
-    fontWeight: "700",
+    fontFamily: fontFamily.bold,
   },
   details: {
     marginTop: 42,
@@ -65,7 +74,7 @@ export const s = StyleSheet.create({
     gap: 16,
     alignItems: "center",
   },
-  footerDetails: {
+  footerContent: {
     flex: 1,
     gap: 24,
   },

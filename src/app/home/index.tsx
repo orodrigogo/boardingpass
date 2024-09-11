@@ -1,29 +1,35 @@
-import { Text, View } from "react-native"
+import { Text, View, ImageBackground } from "react-native"
 import Svg, { Line, Circle } from "react-native-svg"
-import { MaterialIcons } from "@expo/vector-icons"
+import { Ionicons } from "@expo/vector-icons"
 
 import { s } from "./styles"
-import { Info } from "../../components/info"
-import { Flight } from "../../components/flight"
+import { colors } from "@/styles/colors"
+
+import { Info } from "@/components/info"
+import { Flight } from "@/components/flight"
 
 export function Home() {
   return (
     <View style={s.container}>
-      <View style={s.header}>
-        <Text style={s.title}>Boarding Pass</Text>
-      </View>
+      <ImageBackground
+        style={s.header}
+        source={require("../../assets/cover.png")}
+      >
+        <Text style={s.title}>Cartão de embarque</Text>
+        <Text style={s.subtitle}>Falta 45 dias para sua viagem</Text>
+      </ImageBackground>
 
       <View style={s.ticket}>
         <View style={s.content}>
           <View style={s.flight}>
-            <Flight label="Tokyo" value="NRT" />
+            <Flight label="São Paulo" value="GRU " />
 
             <View style={s.duration}>
-              <MaterialIcons name="flight-takeoff" size={32} color="#434EF1" />
-              <Text style={s.label}>6h 0m</Text>
+              <Ionicons name="airplane-sharp" size={32} />
+              <Text style={s.hours}>6h 0m</Text>
             </View>
 
-            <Flight label="Tokyo" value="NRT" />
+            <Flight label="Nova York" value="JFK" />
           </View>
 
           <Text style={s.label}>Passageiro</Text>
@@ -43,17 +49,17 @@ export function Home() {
             y1="50%"
             x2="100%"
             y2="50%"
-            stroke="#AFAFAF"
+            stroke={colors.gray[400]}
             strokeWidth="1"
             strokeDasharray="5, 5" // cria um padrão onde a linha é desenhada por 5 unidades e depois há um espaço de 5 unidades.
           />
 
-          <Circle r={8} cx={0} cy="50%" fill="#D7D7D7" />
-          <Circle r={8} cx="100%" cy="50%" fill="#D7D7D7" />
+          <Circle r={8} cx={0} cy="50%" fill={colors.black} />
+          <Circle r={8} cx="100%" cy="50%" fill={colors.black} />
         </Svg>
 
         <View style={s.footer}>
-          <View style={s.footerDetails}>
+          <View style={s.footerContent}>
             <View style={s.inline}>
               <Info label="Voo" value="YZ 607" />
               <Info label="Assento" value="29G" />
@@ -65,7 +71,7 @@ export function Home() {
             </View>
           </View>
 
-          <View style={s.qrCode} />
+          <View style={s.qrCode}></View>
         </View>
       </View>
     </View>

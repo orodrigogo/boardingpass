@@ -29,6 +29,7 @@ export const s = StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: 22,
     overflow: "hidden",
+    paddingBottom: 24,
   },
   content: {
     padding: 20,
@@ -38,7 +39,7 @@ export const s = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 62,
+    marginBottom: 52,
   },
   duration: {
     alignItems: "center",
@@ -59,7 +60,7 @@ export const s = StyleSheet.create({
     fontFamily: fontFamily.bold,
   },
   details: {
-    marginTop: 42,
+    marginTop: 52,
     gap: 32,
   },
   inline: {
@@ -77,10 +78,5 @@ export const s = StyleSheet.create({
   footerContent: {
     flex: 1,
     gap: 24,
-  },
-  qrCode: {
-    width: 130,
-    height: 130,
-    backgroundColor: "red",
   },
 })

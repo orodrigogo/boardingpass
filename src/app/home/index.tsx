@@ -1,6 +1,7 @@
 import { Text, View, ImageBackground } from "react-native"
 import Svg, { Line, Circle } from "react-native-svg"
 import { Ionicons } from "@expo/vector-icons"
+import QRCode from "react-native-qrcode-svg"
 
 import { s } from "./styles"
 import { colors } from "@/styles/colors"
@@ -43,20 +44,22 @@ export function Home() {
           </View>
         </View>
 
-        <Svg height="20" width="100%">
-          <Line
-            x1="0%"
-            y1="50%"
-            x2="100%"
-            y2="50%"
-            stroke={colors.gray[400]}
-            strokeWidth="1"
-            strokeDasharray="5, 5" // cria um padrão onde a linha é desenhada por 5 unidades e depois há um espaço de 5 unidades.
-          />
+        <View>
+          <Svg height={20} width="100%">
+            <Line
+              x1="0%"
+              y1="50%"
+              x2="100%"
+              y2="50%"
+              stroke={colors.gray[400]}
+              strokeWidth="1"
+              strokeDasharray="5, 5" // cria um padrão onde a linha é desenhada por 5 unidades e depois há um espaço de 5 unidades.
+            />
 
-          <Circle r={8} cx={0} cy="50%" fill={colors.black} />
-          <Circle r={8} cx="100%" cy="50%" fill={colors.black} />
-        </Svg>
+            <Circle r={8} cx={0} cy="50%" fill={colors.black} />
+            <Circle r={8} cx="100%" cy="50%" fill={colors.black} />
+          </Svg>
+        </View>
 
         <View style={s.footer}>
           <View style={s.footerContent}>
@@ -71,7 +74,7 @@ export function Home() {
             </View>
           </View>
 
-          <View style={s.qrCode}></View>
+          <QRCode value="boarding code" size={130} />
         </View>
       </View>
     </View>
